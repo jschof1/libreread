@@ -34,6 +34,8 @@ jobs:
           log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
       - name: Restore release signing identity
+        env:
+          SIGNING_KEY: ${{ secrets.LIBREREAD_SIGNING_KEY_B64 }}
         run: |
           test -n "$SIGNING_KEY" || { echo 'The retained signing identity is required.' >&2; exit 1; }
           printf '%s' "$SIGNING_KEY" | base64 --decode > "$LIBREREAD_KEYSTORE_PATH"
