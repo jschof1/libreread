@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_transcript"
+        android:checkable="true"
+        android:icon="@drawable/ic_caption"
+        android:title="@string/libreread_show_transcript"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_rewrite"
+        android:title="@string/libreread_rewrite"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_text_size"
+        android:title="@string/libreread_text_size"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_width"
+        android:title="@string/libreread_readable_width"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_copy_link"
+        android:title="@string/libreread_copy_link"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_saved_articles"
+        android:title="@string/libreread_saved_articles"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_reader_settings"
+        android:title="@string/libreread_open_reader_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_delete"
+        android:title="@string/libreread_delete_article"
+        app:showAsAction="never" />
+
+</menu>

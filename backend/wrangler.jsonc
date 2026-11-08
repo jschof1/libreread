@@ -1,0 +1,8 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "libreread-api",
+  "main": "public/_worker.js",
+  "account_id": "1d7541992ccacf0931ee0e385daa5e08",
+  "compatibility_date": "2026-11-08",
+  "workers_dev": true
+}

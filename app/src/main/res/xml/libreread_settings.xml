@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/libreread_settings_service">
+
+        <EditTextPreference
+            app:key="libreread_api_url"
+            app:title="@string/libreread_settings_api_url" />
+
+        <Preference
+            app:key="libreread_device_token_entry"
+            app:title="@string/libreread_settings_token" />
+
+        <Preference
+            app:key="libreread_reset_service"
+            app:title="@string/libreread_settings_reset" />
+
+        <Preference
+            app:key="libreread_privacy"
+            app:title="@string/libreread_privacy_settings_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/libreread_settings_writing">
+
+        <ListPreference
+            app:defaultValue="clear"
+            app:entries="@array/libreread_style_entries"
+            app:entryValues="@array/libreread_style_values"
+            app:key="libreread_style_preset"
+            app:title="@string/libreread_style"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="full"
+            app:entries="@array/libreread_detail_entries"
+            app:entryValues="@array/libreread_detail_values"
+            app:key="libreread_detail"
+            app:title="@string/libreread_detail"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="libreread_custom_instructions"
+            app:title="@string/libreread_custom_instructions" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/libreread_settings_reading">
+
+        <ListPreference
+            app:defaultValue="18"
+            app:entries="@array/libreread_font_entries"
+            app:entryValues="@array/libreread_font_entries"
+            app:key="libreread_font_size"
+            app:title="@string/libreread_text_size"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="medium"
+            app:entries="@array/libreread_width_entries"
+            app:entryValues="@array/libreread_width_values"
+            app:key="libreread_readable_width"
+            app:title="@string/libreread_readable_width"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="libreread_saved_articles"
+            app:title="@string/libreread_saved_articles" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

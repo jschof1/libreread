@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/ic_text"
+        app:key="libreread"
+        app:summary="@string/libreread_settings_summary"
+        app:title="@string/libreread_settings" />
+
+    <Preference
+        android:icon="@drawable/ic_settings"
+        android:summary="@string/general_summary"
+        app:key="general"
+        app:title="@string/general" />
+
+    <Preference
+        android:icon="@drawable/ic_server"
+        app:key="instance"
+        app:summary="@string/instance_summary"
+        app:title="@string/instance" />
+
+    <Preference
+        android:icon="@drawable/ic_color"
+        app:key="appearance"
+        app:summary="@string/appearance_summary"
+        app:title="@string/appearance" />
+
+    <Preference
+        android:icon="@drawable/ic_history_filled"
+        android:summary="@string/history_summary"
+        app:key="history"
+        app:title="@string/history" />
+
+    <Preference
+        android:icon="@drawable/ic_notification"
+        android:summary="@string/notify_new_streams"
+        app:key="notifications"
+        app:title="@string/notifications" />
+
+    <Preference
+        android:icon="@drawable/ic_backup"
+        app:key="backup_restore"
+        app:summary="@string/backup_restore_summary"
+        app:title="@string/backup_restore" />
+
+    <PreferenceCategory>
+
+        <Preference
+            android:icon="@drawable/ic_info"
+            app:key="crashlog"
+            app:title="@string/crashlog"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

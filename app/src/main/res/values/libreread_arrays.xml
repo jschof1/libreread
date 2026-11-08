@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="libreread_style_entries">
+        <item>@string/libreread_style_clear</item>
+        <item>@string/libreread_style_conversational</item>
+        <item>@string/libreread_style_analytical</item>
+        <item>@string/libreread_style_technical</item>
+        <item>@string/libreread_style_narrative</item>
+        <item>@string/libreread_style_custom</item>
+    </string-array>
+    <string-array name="libreread_style_values">
+        <item>clear</item>
+        <item>conversational</item>
+        <item>analytical</item>
+        <item>technical</item>
+        <item>narrative</item>
+        <item>custom</item>
+    </string-array>
+    <string-array name="libreread_detail_entries">
+        <item>@string/libreread_detail_full</item>
+        <item>@string/libreread_detail_balanced</item>
+        <item>@string/libreread_detail_brief</item>
+    </string-array>
+    <string-array name="libreread_detail_values">
+        <item>full</item>
+        <item>balanced</item>
+        <item>brief</item>
+    </string-array>
+    <string-array name="libreread_width_entries">
+        <item>@string/libreread_width_narrow</item>
+        <item>@string/libreread_width_medium</item>
+        <item>@string/libreread_width_full</item>
+    </string-array>
+    <string-array name="libreread_width_values">
+        <item>narrow</item>
+        <item>medium</item>
+        <item>full</item>
+    </string-array>
+    <string-array name="libreread_font_entries">
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+        <item>28</item>
+    </string-array>
+</resources>
