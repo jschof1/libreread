@@ -14,6 +14,8 @@ LibreRead is a configurable client. Article generation requires your own compati
 - Caption-first generation, with labelled AI transcription when captions are unavailable.
 - Progress, cancellation, retry and recovery. A failed rewrite keeps the previous article.
 
+<img src="docs/screenshots/live-article.png" width="300" alt="LibreRead displays a finished article with its transcript source and original video reference">
+
 ## Get started
 
 1. Install the release APK on Android 8.0 or newer.

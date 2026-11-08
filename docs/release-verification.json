@@ -1,0 +1,68 @@
+{
+  "release": "v1.0.0",
+  "buildSourceCommit": "89652e2e33c6fcef7da2588509704542277c62df",
+  "buildRun": "https://github.com/jschof1/libreread/actions/runs/42502416854",
+  "releaseTagAddsDocumentationOnly": true,
+  "apk": {
+    "applicationId": "net.aspectstudio.libreread",
+    "versionName": "1.0.0",
+    "versionCode": 73,
+    "minSdk": 26,
+    "debuggable": false,
+    "signatureVerified": true,
+    "embeddedServiceConfigured": false,
+    "certificateSha256": "a8495ff591cf88311724e00ab424229dfb8b584adfd9418ec2aeabbcf88826e0",
+    "keystoreFileSha256": "9acd544c863b8e2788054bd5956544ce83b1726a972a853200340ea72c19caa8",
+    "apkSha256": "420c886a32442842ac8d4a2fd1e17369a8ac91487f0c016eaaca0127bd961e88",
+    "apkBytes": 10663533,
+    "instrumentationApkSha256": "6cfe6f0a129e24eab143fa4ed4a88251f3e8255b7d1f3fad0eaab0162bf21ac9",
+    "sourceCommit": "89652e2e33c6fcef7da2588509704542277c62df",
+    "sourceRun": "https://github.com/jschof1/libreread/actions/runs/42502416854",
+    "personalCredentialAbsent": true,
+    "personalServiceHostnameAbsent": true
+  },
+  "jvm": {
+    "tests": 56,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "backendTests": {
+    "tests": 27,
+    "failures": 0
+  },
+  "instrumentationParserTests": {
+    "tests": 7,
+    "failures": 0
+  },
+  "publicAndroidSuite": {
+    "tests": 22,
+    "failures": 0,
+    "skipped": 1,
+    "skipReason": "Only the opt-in live provider test; no service credential is supplied in public CI"
+  },
+  "configuredAndroidSuite": {
+    "tests": 22,
+    "failures": 0,
+    "skipped": 0,
+    "sameApkSha256": "420c886a32442842ac8d4a2fd1e17369a8ac91487f0c016eaaca0127bd961e88",
+    "runtimeOnlyConfiguration": true,
+    "execution": "Private CI; credentials and raw logs are not published"
+  },
+  "screenshots": [
+    {
+      "file": "docs/screenshots/live-article.png",
+      "sha256": "8babcd9e2ac0755e55f1019de75ce2eb82c1978bf451a24236991011c1a69ce0"
+    },
+    {
+      "file": "docs/screenshots/service-setup.png",
+      "sha256": "d0b85b7415737dfcb446d1a2cec225ebc570bc1645204ea75111fce45fd4c095"
+    },
+    {
+      "file": "docs/screenshots/transcript.png",
+      "sha256": "204fd565309c72c17eb370a0f6b71e54c89e03cd0d8e88bfd6c731adc1d89bb7"
+    }
+  ],
+  "credentialScan": "Personal credential and personal service hostname absent from all app and test APK entries",
+  "handset": "Not tested on a physical handset"
+}
