@@ -45,6 +45,7 @@ metadata = {
     "keystoreFileSha256": key_hash,
     "apkSha256": hashlib.sha256(path.read_bytes()).hexdigest(),
     "apkBytes": path.stat().st_size,
+    "instrumentationApkSha256": hashlib.sha256(pathlib.Path("app/build/outputs/apk/androidTest/release/app-release-androidTest.apk").read_bytes()).hexdigest(),
 }
 path.with_name("release-metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
 print(json.dumps(metadata, indent=2))

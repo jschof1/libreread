@@ -19,7 +19,7 @@ const article = {
 const transcribed = { available: true, complete: true, transcript: "All right, so here we are in front of the elephants.", language: "en" };
 
 function request(path = "/v1/articles", value = source, options = {}) {
-  return new Request(`https://libreread-api.pages.dev${path}`, {
+  return new Request(`https://reader.example.com${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.DEVICE_TOKEN}`, ...options.headers },
     body: JSON.stringify(value),

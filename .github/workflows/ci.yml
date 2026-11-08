@@ -21,7 +21,6 @@ jobs:
     env:
       LIBREREAD_API_URL: ''
       LIBREREAD_DEVICE_TOKEN: ''
-      SIGNING_KEY: ${{ secrets.LIBREREAD_SIGNING_KEY_B64 }}
       LIBREREAD_KEYSTORE_PATH: /tmp/libreread.keystore
     steps:
       - uses: actions/checkout@v4

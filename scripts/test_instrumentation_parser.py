@@ -7,7 +7,7 @@ import unittest
 CHECKER = pathlib.Path(__file__).with_name('check-instrumentation.py')
 
 class InstrumentationProtocolTests(unittest.TestCase):
-    def run_fixture(self, live=True, missing=False, failed=False, duplicate=False, unexpected_skip=False):
+    def run_fixture(self, live=True, missing=False, failed=False, duplicate=False, unexpected_skip=False, missing_end=False):
         lines = []
         count = 21 if missing else 22
         for i in range(count):
@@ -28,7 +28,8 @@ class InstrumentationProtocolTests(unittest.TestCase):
                       'INSTRUMENTATION_STATUS: test=' + name,
                       'INSTRUMENTATION_STATUS: numtests=22',
                       'INSTRUMENTATION_STATUS_CODE: ' + str(code)]
-        lines.append('INSTRUMENTATION_CODE: -1')
+        if not missing_end:
+            lines.append('INSTRUMENTATION_CODE: -1')
         with tempfile.TemporaryDirectory() as folder:
             log = pathlib.Path(folder) / 'instrumentation.txt'
             log.write_text('\n'.join(lines))
@@ -40,6 +41,12 @@ class InstrumentationProtocolTests(unittest.TestCase):
     def test_only_opt_in_live_case_may_skip_publicly(self):
         self.assertEqual(0, self.run_fixture(live=False))
         self.assertNotEqual(0, self.run_fixture(unexpected_skip=True))
+
+    def test_crashed_process_is_rejected(self):
+        self.assertNotEqual(0, self.run_fixture(missing_end=True))
+
+    def test_live_suite_cannot_skip(self):
+        self.assertNotEqual(0, self.run_fixture(live=True, unexpected_skip=True))
 
     def test_failures_are_rejected(self):
         self.assertNotEqual(0, self.run_fixture(failed=True))

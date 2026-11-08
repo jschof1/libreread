@@ -10,6 +10,7 @@ folder = pathlib.Path(sys.argv[1])
 metadata = json.loads((folder / 'release-metadata.json').read_text())
 assert hashlib.sha256((folder / 'app-release.apk').read_bytes()).hexdigest() == metadata['apkSha256']
 assert metadata['debuggable'] is False and metadata['signatureVerified'] is True
+assert hashlib.sha256((folder / 'app-release-androidTest.apk').read_bytes()).hexdigest() == metadata['instrumentationApkSha256']
 PY
 adb install -r "$artifacts/app-release.apk"
 adb install -r "$artifacts/app-release-androidTest.apk"
@@ -21,12 +22,28 @@ if [[ "$live" == true ]]; then
   : "${LIBREREAD_TEST_TOKEN:?Private live test credential is required}"
   arguments+=(-e libreread.serviceUrl "$LIBREREAD_TEST_URL" -e libreread.deviceToken "$LIBREREAD_TEST_TOKEN")
 fi
+remote_command=$(python3 - "${arguments[@]}" <<'PYQUOTE'
+import shlex, sys
+print(shlex.join(['am', 'instrument', *sys.argv[1:], 'net.aspectstudio.libreread.test/androidx.test.runner.AndroidJUnitRunner']))
+PYQUOTE
+)
 set +e
-adb shell am instrument "${arguments[@]}" net.aspectstudio.libreread.test/androidx.test.runner.AndroidJUnitRunner > "$output/instrumentation.txt" 2>&1
+adb shell "$remote_command" > "$output/instrumentation.txt" 2>&1
 runner_status=$?
 set -e
-cat "$output/instrumentation.txt"
 adb logcat -d > "$output/logcat.txt"
+python3 - "$output" <<'PYREDACT'
+import os, pathlib, sys
+for name in ['instrumentation.txt', 'logcat.txt']:
+    path = pathlib.Path(sys.argv[1]) / name
+    text = path.read_text(errors='replace')
+    for key in ['LIBREREAD_TEST_TOKEN', 'LIBREREAD_TEST_URL']:
+        value = os.environ.get(key)
+        if value:
+            text = text.replace(value, '[REDACTED]')
+    path.write_text(text)
+PYREDACT
+cat "$output/instrumentation.txt"
 adb pull /sdcard/Android/data/net.aspectstudio.libreread/files/test-artifacts "$output/screenshots" || true
 if [[ "$runner_status" -ne 0 ]]; then
   exit "$runner_status"
